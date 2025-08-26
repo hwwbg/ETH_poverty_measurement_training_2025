@@ -19,9 +19,9 @@
 	*********************************************
 	** (0) GLOBALE SET-UP 					   **
 	*********************************************
-	glo raw "C:\Users\wb545671\OneDrive - WBG\AFE_work\Mission\3.ETH_Aug2025\NISH2021\Poverty Measurement\Data\rawdata\WMS 2021"
+	glo raw "C:\Users\wb545671\OneDrive - WBG\AFE_work\Mission\3.ETH_Aug2025\NISH2021\training\Data\in"
 	glo clean 
-	glo report "C:\Users\wb545671\OneDrive - WBG\AFE_work\Mission\3.ETH_Aug2025\NISH2021\Poverty Measurement\Data\rawdata\WMS 2021"
+	glo report "C:\Users\wb545671\OneDrive - WBG\AFE_work\Mission\3.ETH_Aug2025\NISH2021\training\Data\in"
 
 	*********************************************
 	** (1) LOGFILE SET-UP					   **
@@ -34,10 +34,10 @@
 	** (2) MODULE PROPERTIES				   **
 	*********************************************
 	/// Load raw data
-	use "${raw}\WMS 2022 Members Level Data.dta", clear	
+	use "${raw}\HH_Roster.dta", clear	
 	
-	sum wq11 - wq18 //issue if we spot zero or missing
-	//hhid
+////////////////////////////////////// need to be updated //////////////////////
+	//hhid (need to be updated)
 	cap ren hhid hhid_orig
 	tostring wq11, gen(hid_1) format(%02.0f)  //region
 	tostring wq12, gen(hid_2) format(%02.0f)  //zone
@@ -189,7 +189,7 @@
 	* variable label
 	label variable wq1109 "line number of [NAME]'s bilogical father"
 	
-	* Check that Field is Not Missing *
+	* Check that Field is skip *
 	assert !missing(wq1109) if wq1108 == 1 //should NOT be missing, but missing
 	replace issue_skip = 1 if missing(wq1109) & wq1108 == 1
 	
@@ -197,7 +197,7 @@
 	replace issue_skip = 1 if !missing(wq1109) & wq1108 == 2
 	
 	* Check that Field is in Range 
-	assert inrange(wq1108, 1,2) 
+	assert inrange(wq1109, 1,2) 
 	replace issue_outrange = 1 if !inrange(wq1108, 1,2)
 
 	**********************************************************************
@@ -225,7 +225,7 @@
 	
 	////////////////////////////////////////////////////////////////////////////
 	//                                 Exercise                               //
-	//clear questions for wq1110 to wq1216
+	//clear questions for wq1110 to wq1120
 	
 
 	
