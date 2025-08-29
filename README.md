@@ -7,3 +7,8 @@ This course's objective is to train colleagues from ESS and MoPD, familiarize th
 
 The main reference for the course will be Giulia Mancini and Giovanni Vecchi’s paper “On the Construction of a Consumption Aggregate for Inequality and Poverty Analysis.” Most of the material will be drawn from this paper, complemented by additional topics such as robust approaches to aggregate construction and the derivation of a national poverty line. At times, the course will introduce methods that differ slightly from Mancini and Vecchi’s framework—sometimes because alternative approaches are more practical in the Ethiopian context, and sometimes to encourage critical reflection and discussion
 
+## Contract
+ccancho@worldbank.org
+hwu4@worldbank.org
+fabeje@worldbank.org
+Cesar A. Cancho <ccancho@worldbank.org>
